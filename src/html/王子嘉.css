@@ -1,0 +1,108 @@
+.center
+{
+    text-align: center;
+    margin-top:20px;
+}
+
+.button
+{
+    padding-right:30px;
+    padding-left:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    color:white;
+}
+
+h1,h2,h3,h4,h5,h6,option,select
+{
+    font-family: "Microsoft JhengHei", monospace, sans-serif;
+}
+
+.option
+{
+    font-family: "Microsoft JhengHei", monospace, sans-serif;
+    font-size:28px;
+    font-weight: 700;
+    columns: 3px;
+}
+
+.purple
+{
+    background-color:rgb(205, 66, 240);
+    color:white;
+}
+
+.blue
+{
+    background-color:rgb(66, 228, 240);
+    color:white;
+}
+
+.blue2
+{
+    background-color:rgb(22, 243, 214);
+    color:white;
+}
+
+.navy
+{
+    background-color:rgb(91, 102, 250);
+    color:white;
+}
+
+.pink
+{
+    background-color:rgb(248, 118, 237);
+    color:white;
+}
+
+.green
+{
+    background-color:rgb(24, 214, 24);
+    color:white;
+}
+
+.ocean
+{
+    background-color:rgb(41, 152, 204);
+    color:white;
+}
+
+.fairy
+{
+    background-color:rgb(177, 67, 241);
+    color:white;
+}
+
+.sunset
+{
+    background-color:rgb(245, 150, 27);
+    color:white;
+}
+
+.snow
+{
+    background-color:rgb(108, 223, 243);
+    color:white;
+}
+
+.rain
+{
+    background-color:rgb(30, 120, 136);
+    color:white;
+}
+
+a:visited { 
+color:rgb(244, 245, 169); 
+text-decoration:none; 
+}
+
+a:link
+{
+    color:white;
+}
+
+div:onmousemove
+{
+    color:white;
+}
