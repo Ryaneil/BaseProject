@@ -5,7 +5,12 @@
 
 int main(void)
 { 
-	int i;
+	int i,cmd;
+	
+	printf("輸入1時模擬發生地震(輸入0時代表沒有發生):");
+	scanf("%d", &cmd);
+	
+	if(cmd) {
 	
 	for (i=0; i<10; i++) {	 
 		Beep(2093, 400);
@@ -20,6 +25,8 @@ int main(void)
 		Beep(2093, 100);
 	}
 	
+	}
+		
 	return 0;
 }
 	
