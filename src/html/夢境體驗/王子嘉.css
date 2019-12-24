@@ -4,14 +4,11 @@
     margin-top:20px;
 }
 
-.button
+.btn:hover
 {
-    padding-right:30px;
-    padding-left:30px;
-    padding-top:10px;
-    padding-bottom:10px;
     color:white;
 }
+
 
 h1,h2,h3,h4,h5,h6,option,select
 {
