@@ -77,18 +77,6 @@ h1,h2,h3,h4,h5,h6,option,select
     color:white;
 }
 
-.snow
-{
-    background-color:rgb(108, 223, 243);
-    color:white;
-}
-
-.rain
-{
-    background-color:rgb(30, 120, 136);
-    color:white;
-}
-
 a:visited { 
 color:rgb(244, 245, 169); 
 text-decoration:none; 
