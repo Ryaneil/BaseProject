@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <title>行程記錄</title>
+    <link rel="stylesheet" type="text/css" href="button.css">
+    <style>
+        .new{
+            font-size: 50px;
+            vertical-align: center;
+            border:0;
+            background-color:#003C9D;
+            color:#fff;
+            border-radius:10px;
+            cursor:pointer;
+            width: 500px;
+            height: 150px;
+        }
+        .new:hover{
+            color:#003C9D;
+            background-color:#fff;
+            border:2px #003C9D solid;
+        }
+        .fix{
+            font-size: 50px;
+            vertical-align: center;
+            border:0;
+            background-color:green  ;
+            color:#fff;
+            border-radius:10px;
+            cursor:pointer;
+            width: 500px;
+            height: 150px;
+        }
+        .fix:hover{
+            color:green;
+            background-color:#fff;
+            border:2px green solid;
+        }
+        .back{
+            font-size: 50px;
+            vertical-align: center;
+            border:0;
+            background-color:red  ;
+            color:#fff;
+            border-radius:10px;
+            cursor:pointer;
+            width: 500px;
+            height: 150px;
+        }
+        .back:hover{
+            color:red;
+            background-color:#fff;
+            border:2px red solid;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <br><br><br><br>
+        <a href="startpage.html">
+            <input type="button" value="今日行程" name="今日行程" class="new" >
+        </a>
+        <br><br><br><br>
+        <a href="fixpage.html">
+            <input type="button" value="修改行程" name="修改行程" class="fix" >
+        </a>
+        <br><br><br><br>
+        <a href="#">
+            <input type="button" value="返回" name="返回首頁" class="back" onclick="history.back()">
+        </a>
+    </div>
+</body>
