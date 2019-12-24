@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!--html CSS-->
+        <link rel="stylesheet" href="../html/王子嘉.css">
+
+        <title>睡眠潛行-時間管理</title>
+ 
+        <!-- css樣式調整 -->
+        <style>
+            #clock{
+                width: 500px;
+                height: 250px;
+                background-color: #000;
+                color: #18f023;
+                font-size: 100px;
+                text-align: center;
+                vertical-align: middle;
+            }    
+            
+            #pic{
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <h1>時間管理</h1>
+        
+        <!-- 標籤寫入 -->
+        請輸入起床時間:<input type="text" id="alerttime" value="請輸入xx:xx:xx" size="50"/><br>
+        請輸入預計睡眠時長:<input type="value" id="long" value="請輸入xx:xx(小時:分鐘)" size="50"/><br>
+        <button onclick="tellbedtime()" id="tell">計算睡眠時長</button>
+        <div id="clock"></div>
+        <!-- <img src="web 貓.jpg" id="pic" alt="圖片"/> -->
+        <audio src="逢甲巷30弄.m4a" id="alarm" preload="auto"></audio>
+    </body>
+</html>
+ 
+<!-- 使用JavaScript動態改變程式 -->
+<script>
+    //這是一段裸露的程式(沒有用function包起來,所以會馬上執行!!)
+    window.setInterval(function () {
+        var date = new Date();//Date型別
+        var input = document.getElementById("alerttime"); //
+        var hour = date.getHours().toString();
+        var millise = date.getMinutes().toString();
+        var second = date.getSeconds().toString();
+        
+        /*1.將原本Date型別轉成 String，由長度判斷當等於1時，補0成雙位數*/
+        if (hour.length == 1) {
+            hour = "0" + hour;
+        }
+        if (millise.length == 1) {
+            millise = "0" + millise;
+        }
+        if (second.length == 1) {
+            second = "0" + second;
+        }
+ 
+        /*2.取得格式化後的系統時間*/
+        var div = document.getElementById("clock");
+        div.innerHTML = hour + ":" + millise + ":" + second;
+        //input.value = hour + ":" + millise + ":" + second;
+ 
+        /*3.規範16:03:55*/
+        //3.1分離出使用者鬧鐘時間
+        var user_input = input.value;//使用者輸入，所以為.value
+        var user_hms = user_input.split(":");
+ 
+        //3.2分離出當地時間
+        var clock_input = div.innerHTML;//
+        var clock_hms = clock_input.split(":");
+ 
+        /*4.判斷使用者鬧鐘時間與當地時間"時分秒"都符合，則按F12顯示log訊息與播放鬧鐘鈴聲*/
+        if (user_hms[0] == clock_hms[0] && user_hms[1] == clock_hms[1] && user_hms[2] == clock_hms[2]) {
+            ////show
+            document.getElementById("alarm").play();
+        }
+ 
+        /*5.取得秒數，動態判斷顯示0~9張圖片*/
+        //var pic = document.getElementById("pic");        
+        var pic = document.getElementById("pic");        
+        var imageNunber = window.parseInt(clock_hms[2]);
+        imageNunber = imageNunber % 10;
+        
+    }, 1000);
+    /*6.訊息提醒*/
+
+
+    function tellbedtime(){
+        //將鬧鐘時間轉為數字
+        var inputalerttime = document.getElementById("alerttime");
+        var user_inputalerttime = inputalerttime.value;//使用者輸入，所以為.value
+        var user_alerthms = user_inputalerttime.split(":");
+
+        //將時長改為數字
+        var inputlong = document.getElementById("long");
+        var user_inputlongtime = inputlong.value;//使用者輸入，所以為.value
+        var user_longhms = user_inputlongtime.split(":");
+
+
+        var bedtimehour;
+        var bedtimeminutes;
+
+
+        if(user_alerthms[0]<user_longhms[0])
+        {
+             bedtimehour=24+parseInt(user_alerthms[0])-parseInt(user_longhms[0]);
+        }
+         else{
+              bedtimehour=user_alerthms[0]-user_longhms[0];
+         }
+         if(user_alerthms[1]<user_longhms[1]){
+              bedtimehour=parseInt(bedtimehour)-1;
+              bedtimeminutes=60+parseInt(user_alerthms[1])-parseInt(user_longhms[1]);
+         }else{
+             bedtimeminutes=user_alerthms[1]-user_longhms[1];
+         }
+
+        var dot=":";
+
+        var bedtime="請於此時間上床睡覺: ";
+        alert(bedtime.concat(bedtimehour,dot,bedtimeminutes));
+    }
+    
+    
+    
+</script>
