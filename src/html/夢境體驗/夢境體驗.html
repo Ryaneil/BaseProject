@@ -12,6 +12,15 @@
         <link rel="stylesheet" href="../夢境體驗/王子嘉.css">
 
         <title>睡眠潛行-夢境體驗</title>
+        <script>
+            const power=window.prompt("偵測電量為:");
+            if(power < 60) {
+                document.write("您的終端裝置電量不足60%，可能會在您睡眠時關機。")
+            }
+            else {
+                document.write("您的終端裝置電量應該足夠睡眠時有腦波音樂控制夢境。")
+            }
+        </script>
     </head>
     
     <body>
@@ -23,34 +32,34 @@
         <h1  class="center">夢境體驗</h1>
         <div class="btn-group-vertical center col-12" role="group" aria-label="Basic example">
             
-            <button type="button" class="btn btn-first blue">
+            <button type="button" class="btn btn-first blue" onclick="history.back()">
                 <h3><b>返回</b></h3>
             </button>
 
-            <button class="btn green">
+            <button class="btn green" onclick="ask()">
                 <h3><b>森林</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-森林.mp3"  class="col-12 col-md-8 col-lg-4 col-xl-3" controls>
+                <audio loop src="../夢境體驗/音樂/音樂-森林.mp3"  class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
         
-            <button class="btn ocean">
+            <button class="btn ocean" onclick="ask()">
                 <h3><b>海洋</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-海洋.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3" controls>
+                <audio loop src="../夢境體驗/音樂/音樂-海洋.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
         
-            <button class="btn fairy">
+            <button class="btn fairy" onclick="ask()">
                 <h3><b>童話</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-童話.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3" controls>
+                <audio loop src="../夢境體驗/音樂/音樂-童話.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
 
-            <button class="btn sunset">
+            <button class="btn sunset" onclick="ask()">
                 <h3><b>夕陽</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-夕陽.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3" controls>
+                <audio loop src="../夢境體驗/音樂/音樂-夕陽.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
