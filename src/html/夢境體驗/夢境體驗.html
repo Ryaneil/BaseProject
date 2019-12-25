@@ -23,7 +23,7 @@
         </script>
         <script>
             function ask () {
-                window.prompt("是否繼續聽這首音樂?");
+                alert("是否繼續聽這首音樂?");
             }
         </script>
     </head>
@@ -35,43 +35,151 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <h1  class="center">夢境體驗</h1>
+        <script>
+            function play1 ()
+            {
+                var audio = document.getElementById("s1");
+                var other2 = document.getElementById("s2");
+                var other3 = document.getElementById("s3");
+                var other4 = document.getElementById("s4");
+                var other5 = document.getElementById("s5");
+                audio.play();
+                ask();
+                audio.controls=true;
+                other2.controls = false;
+                other3.controls = false;
+                other4.controls = false;
+                other5.controls = false;
+                other6.controls = false;
+            }
+        </script>
+        <script>
+            function play2 () {
+                var audio = document.getElementById("s2");
+                var other1 = document.getElementById("s1");
+                var other3 = document.getElementById("s3");
+                var other4 = document.getElementById("s4");
+                var other5 = document.getElementById("s5");
+                var other6 = document.getElementById("s6");
+                audio.play();
+                ask();
+                audio.controls = true;
+                other1.controls = false;
+                other3.controls = false;
+                other4.controls = false;
+                other5.controls = false;
+                other6.controls = false;
+            }
+        </script>
+        <script>
+            function play3 () {
+                var audio = document.getElementById("s3");
+                var other1 = document.getElementById("s1");
+                var other2 = document.getElementById("s2");
+                var other4 = document.getElementById("s4");
+                var other5 = document.getElementById("s5");
+                var other6 = document.getElementById("s6");
+                audio.play();
+                ask();
+                audio.controls = true;
+                other1.controls = false;
+                other2.controls = false;
+                other4.controls = false;
+                other5.controls = false;
+                other6.controls = false;
+            }
+        </script>
+        <script>
+            function play4 () {
+                var audio = document.getElementById("s4");
+                var other1 = document.getElementById("s1");
+                var other3 = document.getElementById("s3");
+                var other2 = document.getElementById("s2");
+                var other5 = document.getElementById("s5");
+                var other6 = document.getElementById("s6");
+                audio.play();
+                ask();
+                audio.controls = true;
+                other2.controls = false;
+                other3.controls = false;
+                other1.controls = false;
+                other5.controls = false;
+                other6.controls = false;
+            }
+        </script>
+        <script>
+            function play5 () {
+                var audio = document.getElementById("s5");
+                var other1 = document.getElementById("s1");
+                var other3 = document.getElementById("s3");
+                var other4 = document.getElementById("s4");
+                var other2 = document.getElementById("s2");
+                var other6 = document.getElementById("s6");
+                audio.play();
+                ask();
+                audio.controls = true;
+                other2.controls = false;
+                other3.controls = false;
+                other4.controls = false;
+                other1.controls = false;
+                other6.controls = false;
+            }
+        </script>
+        <script>
+            function play6() {
+                var audio = document.getElementById("s6");
+                var other1 = document.getElementById("s1");
+                var other3 = document.getElementById("s3");
+                var other4 = document.getElementById("s4");
+                var other2 = document.getElementById("s2");
+                var other5 = document.getElementById("s5");
+                audio.play();
+                ask();
+                audio.controls = true;
+                other2.controls = false;
+                other3.controls = false;
+                other4.controls = false;
+                other1.controls = false;
+                other5.controls = false;
+            }
+        </script>
         <div class="btn-group-vertical center col-12" role="group" aria-label="Basic example">
             
             <button type="button" class="btn btn-first blue" onclick="history.back()">
                 <h3><b>返回</b></h3>
             </button>
 
-            <button class="btn green" onclick="ask()">
+            <button class="btn green" onclick="play1()">
                 <h3><b>森林</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-森林.mp3"  class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
+                <audio id="s1" loop src="../夢境體驗/音樂/音樂-森林.mp3"  class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
         
-            <button class="btn ocean" onclick="ask()">
+            <button class="btn ocean" onclick="play2()">
                 <h3><b>海洋</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-海洋.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
+                <audio id="s2" loop src="../夢境體驗/音樂/音樂-海洋.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
         
-            <button class="btn fairy" onclick="ask()">
+            <button class="btn fairy" onclick="play3()">
                 <h3><b>童話</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-童話.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
+                <audio id="s3" loop src="../夢境體驗/音樂/音樂-童話.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
 
-            <button class="btn sunset" onclick="ask()">
+            <button class="btn sunset" onclick="play4()">
                 <h3><b>夕陽</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-夕陽.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
+                <audio id="s4" loop src="../夢境體驗/音樂/音樂-夕陽.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
 
-            <button class="btn purple" onclick="ask()">
+            <button class="btn purple" onclick="play5()">
                 <h3><b>惡夢</b></h3>
-                <audio loop src="../夢境體驗/音樂/音樂-惡夢.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center" controls>
+                <audio id="s5" loop src="../夢境體驗/音樂/音樂-惡夢.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
