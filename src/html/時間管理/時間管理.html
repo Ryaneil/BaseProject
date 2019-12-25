@@ -35,9 +35,11 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <a href="../homepage.html" style="font-size: 60px;">返回</a><br>
         <h1>時間管理</h1>
         
         <!-- 標籤寫入 -->
+        
         請輸入起床時間:<input type="text" id="alerttime" value="請輸入xx:xx:xx" size="50"/><br>
         請輸入預計睡眠時長:<input type="value" id="long" value="請輸入xx:xx(小時:分鐘)" size="50"/><br>
         <button onclick="tellbedtime()" id="tell">計算上床時間</button>
@@ -95,24 +97,17 @@
         
     }, 1000);
     /*6.訊息提醒*/
-
-
     function tellbedtime(){
         //將鬧鐘時間轉為數字
         var inputalerttime = document.getElementById("alerttime");
         var user_inputalerttime = inputalerttime.value;//使用者輸入，所以為.value
         var user_alerthms = user_inputalerttime.split(":");
-
         //將時長改為數字
         var inputlong = document.getElementById("long");
         var user_inputlongtime = inputlong.value;//使用者輸入，所以為.value
         var user_longhms = user_inputlongtime.split(":");
-
-
         var bedtimehour;
         var bedtimeminutes;
-
-
         if(user_alerthms[0]<user_longhms[0])
         {
              bedtimehour=24+parseInt(user_alerthms[0])-parseInt(user_longhms[0]);
@@ -126,9 +121,7 @@
          }else{
              bedtimeminutes=user_alerthms[1]-user_longhms[1];
          }
-
         var dot=":";
-
         var bedtime="請於此時間上床睡覺: ";
         alert(bedtime.concat(bedtimehour,dot,bedtimeminutes));
     }
