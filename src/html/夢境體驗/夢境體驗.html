@@ -21,11 +21,6 @@
                 document.write("您的終端裝置電量應該足夠睡眠時有腦波音樂控制夢境。")
             }
         </script>
-        <script>
-            function ask () {
-                alert("是否繼續聽這首音樂?");
-            }
-        </script>
     </head>
     
     <body>
@@ -44,7 +39,6 @@
                 var other4 = document.getElementById("s4");
                 var other5 = document.getElementById("s5");
                 audio.play();
-                ask();
                 audio.controls=true;
                 other2.controls = false;
                 other3.controls = false;
@@ -62,7 +56,6 @@
                 var other5 = document.getElementById("s5");
                 var other6 = document.getElementById("s6");
                 audio.play();
-                ask();
                 audio.controls = true;
                 other1.controls = false;
                 other3.controls = false;
@@ -80,7 +73,6 @@
                 var other5 = document.getElementById("s5");
                 var other6 = document.getElementById("s6");
                 audio.play();
-                ask();
                 audio.controls = true;
                 other1.controls = false;
                 other2.controls = false;
@@ -98,7 +90,6 @@
                 var other5 = document.getElementById("s5");
                 var other6 = document.getElementById("s6");
                 audio.play();
-                ask();
                 audio.controls = true;
                 other2.controls = false;
                 other3.controls = false;
@@ -116,7 +107,6 @@
                 var other2 = document.getElementById("s2");
                 var other6 = document.getElementById("s6");
                 audio.play();
-                ask();
                 audio.controls = true;
                 other2.controls = false;
                 other3.controls = false;
@@ -134,7 +124,6 @@
                 var other2 = document.getElementById("s2");
                 var other5 = document.getElementById("s5");
                 audio.play();
-                ask();
                 audio.controls = true;
                 other2.controls = false;
                 other3.controls = false;
@@ -143,47 +132,80 @@
                 other5.controls = false;
             }
         </script>
+        <script>
+            function pause() {
+                var audio1 = document.getElementById("s1");
+                var audio2 = document.getElementById("s2");
+                var audio3 = document.getElementById("s3");
+                var audio4 = document.getElementById("s4");
+                var audio5 = document.getElementById("s5");
+                var audio6 = document.getElementById("s6");
+                audio1.pause();
+                audio2.pause();
+                audio3.pause();
+                audio4.pause();
+                audio5.pause();
+                audio6.pause();
+            }
+        </script>
         <div class="btn-group-vertical center col-12" role="group" aria-label="Basic example">
             
             <button type="button" class="btn btn-first blue" onclick="history.back()">
                 <h3><b>返回</b></h3>
             </button>
 
-            <button class="btn green" onclick="play1()">
+            <button class="btn green" onclick="play1()" data-toggle="modal" data-target="#exampleModal">
                 <h3><b>森林</b></h3>
                 <audio id="s1" loop src="../夢境體驗/音樂/音樂-森林.mp3"  class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
         
-            <button class="btn ocean" onclick="play2()">
+            <button class="btn ocean" onclick="play2()" data-toggle="modal" data-target="#exampleModal">
                 <h3><b>海洋</b></h3>
                 <audio id="s2" loop src="../夢境體驗/音樂/音樂-海洋.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
         
-            <button class="btn fairy" onclick="play3()">
-                <h3><b>童話</b></h3>
+            <button class="btn fairy" onclick="play3()" data-toggle="modal" data-target="#exampleModal">
+                <h3><b>美夢</b></h3>
                 <audio id="s3" loop src="../夢境體驗/音樂/音樂-童話.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
 
-            <button class="btn sunset" onclick="play4()">
+            <button class="btn sunset" onclick="play4()" data-toggle="modal" data-target="#exampleModal">
                 <h3><b>夕陽</b></h3>
                 <audio id="s4" loop src="../夢境體驗/音樂/音樂-夕陽.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
 
-            <button class="btn purple" onclick="play5()">
+            <button class="btn purple" onclick="play5()" data-toggle="modal" data-target="#exampleModal">
                 <h3><b>惡夢</b></h3>
                 <audio id="s5" loop src="../夢境體驗/音樂/音樂-惡夢.mp3" class="col-12 col-md-8 col-lg-4 col-xl-3 center">
                     <h3>你的瀏覽器不支援音檔</h3>
                 </audio>
             </button>
+        </div>
 
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">確定要選這首歌嗎?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">確認</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="pause()">取消</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </body>
