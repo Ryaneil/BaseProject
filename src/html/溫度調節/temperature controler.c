@@ -220,7 +220,7 @@ int main(){
 			
 			situation=(rand()%100)+1;
 		//	printf("%d\n",situation);
-			if(situation > 0)
+			if(situation > 50)
 				bt.flag=1;
 			else
 			{
@@ -232,7 +232,14 @@ int main(){
 				
 			if(bt.flag == 0)
 			{
-				printf("藍芽尚未連接 請再次嘗試\n");
+				printf("藍芽尚未連接 請30秒後再次嘗試\n");
+				int i;
+				for(i=0;i<30;i++)
+				{
+					printf("%d ",30-i);
+					Sleep(1000);
+				}
+				printf("\n"); 
 			}
 			else if(bt.flag == 1)
 			{
